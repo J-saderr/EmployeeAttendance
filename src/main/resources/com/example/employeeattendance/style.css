@@ -1,0 +1,27 @@
+.side_ap{
+     -fx-background-color:#132FBA;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+.inner_pane{
+    -fx-background-color:#FFF6D2;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #FFF6D2;
+}
+.dashboard {
+    -fx-background-color: transparent;
+ }
+.tab {
+    -fx-background-color:#FFFEFA;
+}
+.frame{
+    -fx-background-color:transparent;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #132FBA;
+}
