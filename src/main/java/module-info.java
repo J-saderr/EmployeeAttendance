@@ -1,7 +1,10 @@
 module com.example.employeeattendance {
     requires javafx.controls;
     requires javafx.fxml;
+<<<<<<< HEAD
     requires java.sql;
+=======
+>>>>>>> ddd1214 (Initial)
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
