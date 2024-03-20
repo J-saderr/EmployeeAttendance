@@ -7,4 +7,8 @@ module com.example.employeeattendance {
 
     opens com.example.employeeattendance to javafx.fxml;
     exports com.example.employeeattendance;
+
+    //Display & run file fxml: LoginScreen
+    exports LoginScreen;
+    opens LoginScreen to javafx.fxml;
 }
