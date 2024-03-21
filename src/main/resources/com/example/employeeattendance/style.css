@@ -34,3 +34,12 @@
     -fx-border-style: solid;
     -fx-border-color: #799CF0;
 }
+
+.frame4{
+    -fx-background-color: #132FBA;
+    -fx-border-width: 3px 3px 3px 3px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #132FBA;
+}
