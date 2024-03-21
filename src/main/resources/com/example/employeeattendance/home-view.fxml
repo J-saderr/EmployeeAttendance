@@ -109,17 +109,17 @@
                <children>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" text="Full Name:" textFill="#132fba">
                      <font>
-                        <Font name="Montserrat SemiBold" size="18.0" />
+                        <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="46.0" prefHeight="25.0" prefWidth="117.0" text="Position:" textFill="#132fba">
                      <font>
-                        <Font name="Montserrat SemiBold" size="18.0" />
+                        <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="77.0" prefHeight="25.0" prefWidth="136.0" text="Department: " textFill="#132fba">
                      <font>
-                        <Font name="Montserrat SemiBold" size="18.0" />
+                        <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
                </children>
@@ -289,7 +289,7 @@
                   </Label>
                </children>
             </Pane>
-            <Label layoutX="543.0" layoutY="505.0" text="Penalty" textFill="#132fba">
+            <Label layoutX="543.0" layoutY="505.0" text="Income" textFill="#132fba">
                <font>
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
