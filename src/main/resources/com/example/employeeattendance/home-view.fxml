@@ -15,7 +15,6 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -106,7 +105,6 @@
                   <Font name="Montserrat ExtraBold" size="22.0" />
                </font>
             </Label>
-            <Circle fill="#fff6d2" layoutX="93.0" layoutY="164.0" radius="58.0" stroke="#132fba" strokeType="INSIDE" strokeWidth="2.0" />
             <Pane fx:id="inner_pane2" layoutX="168.0" layoutY="106.0" prefHeight="116.0" prefWidth="343.0" styleClass="frame2" stylesheets="@style.css">
                <children>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" text="Full Name:" textFill="#132fba">
@@ -296,6 +294,11 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
+            <ImageView fitHeight="116.0" fitWidth="116.0" layoutX="34.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../res/icon/avatar.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
