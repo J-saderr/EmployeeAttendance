@@ -8,6 +8,10 @@
     -fx-background-color:#FFFEFA;
 }
 
+.trans {
+    -fx-background-color:transparent;
+}
+
 .frame1{
     -fx-background-color:#FFF6D2;
     -fx-border-width: 2px 2px 2px 2px;
