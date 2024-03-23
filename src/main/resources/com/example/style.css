@@ -1,9 +1,14 @@
-.side_ap{
+.sidebar{
      -fx-background-color:#132FBA;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
 }
-.inner_pane{
+
+.tab {
+    -fx-background-color:#FFFEFA;
+}
+
+.frame1{
     -fx-background-color:#FFF6D2;
     -fx-border-width: 2px 2px 2px 2px;
     -fx-border-radius: 20px;
@@ -11,17 +16,21 @@
     -fx-border-style: solid;
     -fx-border-color: #FFF6D2;
 }
-.dashboard {
-    -fx-background-color: transparent;
- }
-.tab {
-    -fx-background-color:#FFFEFA;
-}
-.frame{
+
+.frame2{
     -fx-background-color:transparent;
-    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-width: 3px 3px 3px 3px;
     -fx-border-radius: 20px;
     -fx-background-radius: 20px;
     -fx-border-style: solid;
     -fx-border-color: #132FBA;
+}
+
+.frame3{
+    -fx-background-color: #799CF0;
+    -fx-border-width: 3px 3px 3px 3px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #799CF0;
 }

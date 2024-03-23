@@ -14,14 +14,14 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="682.0" prefWidth="0.0">
          <children>
-            <AnchorPane fx:id="side_ap" prefHeight="712.0" prefWidth="218.0" styleClass="side_ap" stylesheets="@../style.css">
+            <AnchorPane fx:id="side_ap" prefHeight="712.0" prefWidth="218.0" styleClass="side_ap" stylesheets="@style.css">
                <children>
-                  <Pane fx:id="inner_pane1" layoutY="110.0" opacity="0.2" prefHeight="51.0" prefWidth="238.0" styleClass="inner_pane" stylesheets="@../style.css" />
-                  <Pane fx:id="inner_pane" layoutX="13.0" layoutY="14.0" prefHeight="63.0" prefWidth="208.0" styleClass="inner_pane" stylesheets="@../style.css">
+                  <Pane fx:id="inner_pane1" layoutY="110.0" opacity="0.2" prefHeight="51.0" prefWidth="238.0" styleClass="inner_pane" stylesheets="@style.css" />
+                  <Pane fx:id="inner_pane" layoutX="13.0" layoutY="14.0" prefHeight="63.0" prefWidth="208.0" styleClass="inner_pane" stylesheets="@style.css">
                      <children>
                         <Label graphicTextGap="3.0" layoutX="60.0" layoutY="2.0" prefHeight="73.0" prefWidth="136.0" text="BCHECKING" textFill="#132fba">
                            <font>
@@ -35,7 +35,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Button fx:id="dashboard" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="242.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="dashboard" stylesheets="@../style.css" text="Dashboard" textFill="#fff6d2">
+                  <Button fx:id="dashboard" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="242.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="dashboard" stylesheets="@../../../../../../../demo/src/main/resources/style.css" text="Dashboard" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -53,7 +53,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="dashboard1" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="dashboard" stylesheets="@../style.css" text="Information" textFill="#fff6d2">
+                  <Button fx:id="dashboard1" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="dashboard" stylesheets="@../../../../../../../demo/src/main/resources/style.css" text="Information" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -71,7 +71,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="dashboard11" alignment="BOTTOM_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="dashboard" stylesheets="@../style.css" text="Home" textFill="#fff6d2">
+                  <Button fx:id="dashboard11" alignment="BOTTOM_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="dashboard" stylesheets="@style.css" text="Home" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -93,16 +93,16 @@
             </AnchorPane>
          </children>
       </VBox>
-      <AnchorPane prefHeight="689.0" prefWidth="913.0" styleClass="tab" stylesheets="@../style.css">
+      <AnchorPane prefHeight="689.0" prefWidth="913.0" styleClass="tab" stylesheets="@style.css">
          <children>
-            <ChoiceBox layoutX="759.0" layoutY="34.0" prefHeight="43.0" prefWidth="117.0" styleClass="side_ap" stylesheets="@../style.css" />
+            <ChoiceBox layoutX="759.0" layoutY="34.0" prefHeight="43.0" prefWidth="117.0" styleClass="side_ap" stylesheets="@style.css" />
             <Label layoutX="34.0" layoutY="56.0" prefHeight="43.0" prefWidth="364.0" text="Hello, employee!" textFill="#132fba">
                <font>
                   <Font name="Montserrat ExtraBold" size="22.0" />
                </font>
             </Label>
             <Circle fill="#fff6d2" layoutX="93.0" layoutY="164.0" radius="58.0" stroke="#132fba" strokeType="INSIDE" strokeWidth="2.0" />
-            <Pane fx:id="inner_pane2" layoutX="168.0" layoutY="106.0" prefHeight="116.0" prefWidth="364.0" styleClass="frame" stylesheets="@../style.css">
+            <Pane fx:id="inner_pane2" layoutX="168.0" layoutY="106.0" prefHeight="116.0" prefWidth="364.0" styleClass="frame" stylesheets="@style.css">
                <children>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" text="Base Salary:" textFill="#132fba">
                      <font>
@@ -121,7 +121,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="inner_pane21" layoutX="34.0" layoutY="245.0" prefHeight="365.0" prefWidth="491.0" styleClass="frame" stylesheets="@../style.css">
+            <Pane fx:id="inner_pane21" layoutX="34.0" layoutY="245.0" prefHeight="365.0" prefWidth="491.0" styleClass="frame" stylesheets="@style.css">
                <children>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" text="Overall" textFill="#132fba">
                      <font>
@@ -130,7 +130,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="inner_pane211" layoutX="542.0" layoutY="245.0" prefHeight="116.0" prefWidth="334.0" styleClass="frame" stylesheets="@../style.css">
+            <Pane fx:id="inner_pane211" layoutX="542.0" layoutY="245.0" prefHeight="116.0" prefWidth="334.0" styleClass="frame" stylesheets="@style.css">
                <children>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="208.0" text="Month Performance" textFill="#132fba">
                      <font>
