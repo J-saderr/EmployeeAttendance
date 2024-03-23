@@ -8,6 +8,10 @@
     -fx-background-color:#FFFEFA;
 }
 
+.trans {
+    -fx-background-color:transparent;
+}
+
 .frame1{
     -fx-background-color:#FFF6D2;
     -fx-border-width: 2px 2px 2px 2px;
@@ -33,4 +37,13 @@
     -fx-background-radius: 20px;
     -fx-border-style: solid;
     -fx-border-color: #799CF0;
+}
+
+.frame4{
+    -fx-background-color: #132FBA;
+    -fx-border-width: 3px 3px 3px 3px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #132FBA;
 }
