@@ -124,7 +124,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="inner_pane11" layoutX="34.0" layoutY="245.0" prefHeight="365.0" prefWidth="478.0" styleClass="frame2" stylesheets="@style.css">
+            <Pane fx:id="inner_pane21" layoutX="34.0" layoutY="245.0" prefHeight="365.0" prefWidth="478.0" styleClass="frame2" stylesheets="@style.css">
                <children>
                   <Label alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="22.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" text="Overall" textFill="#132fba">
                      <font>
