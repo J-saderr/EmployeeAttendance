@@ -100,7 +100,14 @@
       </VBox>
       <AnchorPane prefHeight="689.0" prefWidth="913.0" styleClass="tab" stylesheets="@style.css">
          <children>
-            <ChoiceBox layoutX="759.0" layoutY="34.0" prefHeight="43.0" prefWidth="117.0" styleClass="sidebar" stylesheets="@style.css" />
+            <ChoiceBox layoutX="759.0" layoutY="34.0" prefHeight="43.0" prefWidth="117.0" styleClass="frame4" stylesheets="@style.css">
+               <effect>
+                  <DropShadow height="36.0" radius="17.5" width="36.0">
+                     <color>
+                        <Color red="0.6842105388641357" green="0.6842105388641357" blue="0.6842105388641357" />
+                     </color>
+                  </DropShadow>
+               </effect></ChoiceBox>
             <Label layoutX="34.0" layoutY="56.0" prefHeight="43.0" prefWidth="364.0" text="Hello, employee!" textFill="#132fba">
                <font>
                   <Font name="Montserrat ExtraBold" size="22.0" />
