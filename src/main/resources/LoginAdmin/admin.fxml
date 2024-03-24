@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Admin.AdminController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane fx:id="background" prefHeight="689.0" prefWidth="913.0" style="-fx-background-color: #FFFEFA;" stylesheets="@admincss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.AdminController">
+   <children>
+      <AnchorPane prefHeight="712.0" prefWidth="218.0" styleClass="anchor-pane" stylesheets="@admincss.css">
+         <children>
+            <JFXButton fx:id="ButtonHome" alignment="CENTER_RIGHT" layoutX="42.0" layoutY="101.0" prefHeight="59.0" prefWidth="177.0" ripplerFill="#9d862c" stylesheets="@admincss.css" text="Home" textFill="#132fba">
+               <font>
+                  <Font name="Montserrat Semi Bold" size="23.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="278.0" layoutY="32.0" text="Average Time" />
+   </children>
 </AnchorPane>
