@@ -1,3 +1,7 @@
+/*
+BASE STYLE
+*/
+
 .sidebar{
      -fx-background-color:#132FBA;
 }
@@ -9,6 +13,10 @@
 .trans {
     -fx-background-color:transparent;
 }
+
+/*
+FRAME STYLE
+*/
 
 .frame1{
     -fx-background-color:#FFF6D2;
@@ -44,4 +52,33 @@
     -fx-background-radius: 20px;
     -fx-border-style: solid;
     -fx-border-color: #132FBA;
+}
+
+.frame5{
+    -fx-background-color: #FFF6D2;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-style: solid;
+    -fx-border-color: #132FBA;
+}
+
+/*
+COMBO BOX STYLE
+*/
+
+.month{
+    -fx-background-color: #132FBA;
+    -fx-border-width: 3px 3px 3px 3px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+    -fx-border-color: #132FBA;
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-font-family: 'Montserrat';
+}
+
+.month .cell {
+    -fx-text-fill: white;
 }
