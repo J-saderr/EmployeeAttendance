@@ -4,7 +4,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -100,7 +100,6 @@
       </VBox>
       <AnchorPane prefHeight="689.0" prefWidth="913.0" styleClass="tab" stylesheets="@style.css">
          <children>
-            <ChoiceBox layoutX="759.0" layoutY="34.0" prefHeight="43.0" prefWidth="117.0" styleClass="sidebar" stylesheets="@style.css" />
             <Label layoutX="34.0" layoutY="56.0" prefHeight="43.0" prefWidth="364.0" text="Hello, employee!" textFill="#132fba">
                <font>
                   <Font name="Montserrat ExtraBold" size="22.0" />
@@ -256,7 +255,7 @@
                </font>
             </Label>
             <Line endX="233.0" layoutX="643.0" layoutY="482.0" startX="-100.0" stroke="#132fba" />
-            <Pane layoutX="543.0" layoutY="537.0" prefHeight="73.0" prefWidth="334.0" styleClass="sidebar" stylesheets="@style.css">
+            <Pane layoutX="543.0" layoutY="537.0" prefHeight="73.0" prefWidth="334.0" styleClass="frame4" stylesheets="@style.css">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -268,7 +267,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="10,000đ">
+                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" stylesheets="@style.css" text="10,000đ">
                      <font>
                         <Font name="Montserrat SemiBold" size="27.0" />
                      </font>
@@ -301,6 +300,15 @@
                   <Image url="@icon/avatar.png" />
                </image>
             </ImageView>
+            <ComboBox layoutX="753.0" layoutY="27.0" prefHeight="43.0" prefWidth="123.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.6973684430122375" green="0.6973684430122375" blue="0.6973684430122375" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ComboBox>
          </children>
       </AnchorPane>
    </children>
