@@ -19,7 +19,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.HomeController">
    <children>
       <VBox prefHeight="682.0" prefWidth="0.0">
          <children>
@@ -40,7 +40,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Button fx:id="dashboard" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="242.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="frame2" stylesheets="@style.css" text="Dashboard" textFill="#fff6d2">
+                  <Button fx:id="dashboard" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="33.0" prefWidth="216.0" styleClass="frame2" stylesheets="@style.css" text="Dashboard" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -58,7 +58,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="dashboard1" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="frame2" stylesheets="@style.css" text="Information" textFill="#fff6d2">
+                  <Button fx:id="dashboard1" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="180.0" mnemonicParsing="false" onAction="#switchToInfo" prefHeight="33.0" prefWidth="216.0" styleClass="frame2" stylesheets="@style.css" text="Information" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -76,7 +76,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="dashboard11" alignment="BOTTOM_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="216.0" styleClass="trans" stylesheets="@style.css" text="Home" textFill="#fff6d2">
+                  <Button fx:id="dashboard11" alignment="BOTTOM_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="119.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="33.0" prefWidth="216.0" styleClass="trans" stylesheets="@style.css" text="Home" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -131,7 +131,7 @@
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
                   </Label>
-                  <PieChart fx:id="pieChart" layoutX="22.0" layoutY="45.0" prefHeight="297.0" prefWidth="288.0" />
+                  <PieChart fx:id="pieChart" layoutX="21.0" layoutY="39.0" prefHeight="305.0" prefWidth="437.0" />
                </children>
             </Pane>
             <Pane layoutX="542.0" layoutY="131.0" prefHeight="73.0" prefWidth="334.0" styleClass="frame1" stylesheets="@style.css">
