@@ -254,7 +254,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <Line endX="233.0" layoutX="646.0" layoutY="510.0" startX="-100.0" stroke="#132fba" />
+            <Line endX="233.0" layoutX="646.0" layoutY="518.0" startX="-100.0" stroke="#132fba" />
             <Pane layoutX="546.0" layoutY="561.0" prefHeight="73.0" prefWidth="334.0" styleClass="frame4" stylesheets="@style.css">
                <opaqueInsets>
                   <Insets />
