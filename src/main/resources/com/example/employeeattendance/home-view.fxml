@@ -131,7 +131,14 @@
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
                   </Label>
-                  <PieChart fx:id="pieChart" layoutX="21.0" layoutY="39.0" prefHeight="305.0" prefWidth="437.0" />
+                  <PieChart fx:id="pieChart" layoutX="21.0" layoutY="14.0" prefHeight="336.0" prefWidth="437.0">
+                     <effect>
+                        <DropShadow height="36.0" radius="17.5" width="36.0">
+                           <color>
+                              <Color red="0.8026315569877625" green="0.8026315569877625" blue="0.8026315569877625" />
+                           </color>
+                        </DropShadow>
+                     </effect></PieChart>
                </children>
             </Pane>
             <Pane layoutX="546.0" layoutY="81.0" prefHeight="73.0" prefWidth="334.0" styleClass="frame1" stylesheets="@style.css">
