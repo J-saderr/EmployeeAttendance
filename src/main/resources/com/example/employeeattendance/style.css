@@ -82,3 +82,11 @@ COMBO BOX STYLE
 .month .cell {
     -fx-text-fill: white;
 }
+
+/*
+PIECHART COLOR
+*/
+
+.default-color0.chart-pie { -fx-pie-color: #132FBA; }
+.default-color1.chart-pie { -fx-pie-color: #799CF0; }
+.default-color2.chart-pie { -fx-pie-color: #FFF6D2; }
