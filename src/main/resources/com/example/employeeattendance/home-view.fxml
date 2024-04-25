@@ -18,8 +18,13 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.collections.ObservableList?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.HomeController">
+<?import java.lang.String?>
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.Controller.HomeController">
    <children>
       <VBox prefHeight="682.0" prefWidth="0.0">
          <children>
@@ -122,6 +127,21 @@
                         <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
+                  <Label fx:id="name" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="172.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" textFill="#132fba">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="position" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="172.0" layoutY="46.0" prefHeight="25.0" prefWidth="117.0" textFill="#132fba">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="department" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="172.0" layoutY="77.0" prefHeight="25.0" prefWidth="117.0" textFill="#132fba">
+                     <font>
+                        <Font name="Montserrat SemiBold" size="16.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
             <Pane fx:id="inner_pane21" layoutX="34.0" layoutY="269.0" prefHeight="365.0" prefWidth="478.0" styleClass="frame2" stylesheets="@style.css">
@@ -153,7 +173,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="2,000,000đ">
+                  <Label fx:id="base_salary" alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="2,000,000đ">
                      <font>
                         <Font name="Montserrat SemiBold" size="27.0" />
                      </font>
@@ -193,7 +213,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="200,000đ">
+                  <Label fx:id="absent" alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="200,000đ">
                      <font>
                         <Font name="Montserrat SemiBold" size="27.0" />
                      </font>
@@ -233,7 +253,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="10,000đ">
+                  <Label fx:id="checking" alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="10,000đ">
                      <font>
                         <Font name="Montserrat SemiBold" size="27.0" />
                      </font>
@@ -274,7 +294,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" stylesheets="@style.css" text="10,000đ">
+                  <Label fx:id="income" alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" stylesheets="@style.css" text="10,000đ">
                      <font>
                         <Font name="Montserrat SemiBold" size="27.0" />
                      </font>
@@ -307,7 +327,13 @@
                   <Image url="@icon/avatar.png" />
                </image>
             </ImageView>
-            <ComboBox layoutX="393.0" layoutY="28.0" prefHeight="43.0" prefWidth="123.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+            <ComboBox  fx:id="comboBox" layoutX="393.0" layoutY="28.0" prefHeight="43.0" prefWidth="123.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="January"/>
+                     <String fx:value="February"/>
+                  </FXCollections>
+               </items>
                <effect>
                   <DropShadow>
                      <color>
@@ -328,7 +354,7 @@
                   </DropShadow>
                </effect>
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="200,000đ">
+                  <Label fx:id="bonus" alignment="CENTER_RIGHT" layoutX="147.0" prefHeight="73.0" prefWidth="161.0" text="200,000đ">
                      <font>
                         <Font name="Montserrat SemiBold" size="27.0" />
                      </font>

@@ -1,4 +1,4 @@
-package com.example.employeeattendance;
+package com.example.employeeattendance.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +22,7 @@ public class MainController {
     public static Connection connectDb(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/Book", "root", "pass"); // address, database username, database password
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee", "root", "pass"); // address, database username, database password
             return connect;
         }catch(Exception e){e.printStackTrace();}
         return null;

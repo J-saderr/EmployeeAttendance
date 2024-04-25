@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.InfoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.Controller.InfoController">
    <children>
       <VBox prefHeight="682.0" prefWidth="0.0">
          <children>
@@ -36,7 +36,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Button fx:id="dashboard" alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="33.0" prefWidth="216.0" styleClass="frame2" stylesheets="@style.css" text="Dashboard" textFill="#fff6d2">
+                  <Button alignment="TOP_LEFT" graphicTextGap="12.0" layoutX="19.0" layoutY="242.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="33.0" prefWidth="216.0" styleClass="frame2" stylesheets="@style.css" text="Dashboard" textFill="#fff6d2">
                      <font>
                         <Font name="Montserrat ExtraBold" size="18.0" />
                      </font>
@@ -101,12 +101,12 @@
                   <Image url="@icon/avatar.png" />
                </image>
             </ImageView>
-            <Label layoutX="193.0" layoutY="74.0" prefHeight="33.0" prefWidth="635.0" text="Họ và tên" textFill="#132fba">
+            <Label fx:id="fullname" layoutX="193.0" layoutY="74.0" prefHeight="33.0" prefWidth="635.0" text="Họ và tên" textFill="#132fba">
                <font>
                   <Font name="Montserrat SemiBold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="193.0" layoutY="102.0" prefHeight="33.0" prefWidth="635.0" text="Position">
+            <Label fx:id="position" layoutX="193.0" layoutY="102.0" prefHeight="33.0" prefWidth="635.0" text="Position">
                <font>
                   <Font name="Montserrat SemiBold" size="14.0" />
                </font>
@@ -116,7 +116,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="72.0" layoutY="200.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your First Name">
+            <TextField fx:id="firstname" editable="false" layoutX="72.0" layoutY="200.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your First Name">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -126,7 +126,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="455.0" layoutY="199.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your Last Name">
+            <TextField fx:id="lastname" editable="false" layoutX="455.0" layoutY="199.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your Last Name">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -136,7 +136,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="72.0" layoutY="276.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="dd/mm/yyyyy">
+            <TextField fx:id="dateOfBirth" editable="false" layoutX="72.0" layoutY="276.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="dd/mm/yyyyy">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -146,7 +146,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="72.0" layoutY="353.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your ID">
+            <TextField fx:id="id" editable="false" layoutX="72.0" layoutY="353.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your ID">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -156,7 +156,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="72.0" layoutY="431.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your Department">
+            <TextField fx:id="department" editable="false" layoutX="72.0" layoutY="431.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your Department">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -166,7 +166,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField editable="false" layoutX="455.0" layoutY="430.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your Positon">
+            <TextField fx:id="positions" editable="false" layoutX="455.0" layoutY="430.0" prefHeight="25.0" prefWidth="340.0" styleClass="frame5" stylesheets="@style.css" text="Your Positon">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -176,7 +176,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField alignment="TOP_LEFT" layoutX="72.0" layoutY="509.0" prefHeight="63.0" prefWidth="724.0" styleClass="frame5" stylesheets="@style.css" text="Edit your bio here.">
+            <TextField fx:id="bioTextField" alignment="TOP_LEFT" layoutX="72.0" layoutY="509.0" prefHeight="63.0" prefWidth="724.0" styleClass="frame5" stylesheets="@style.css" text="Edit your bio here.">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>
@@ -184,7 +184,7 @@
                   <Insets top="10.0" />
                </opaqueInsets>
             </TextField>
-            <Button layoutX="360.0" layoutY="589.0" mnemonicParsing="false" styleClass="frame4" stylesheets="@style.css" text="Save changes">
+            <Button fx:id="saveButton" layoutX="360.0" layoutY="589.0" mnemonicParsing="false" onAction="#saveButton" styleClass="frame4" stylesheets="@style.css" text="Save changes">
                <font>
                   <Font name="Montserrat SemiBold" size="17.0" />
                </font>
