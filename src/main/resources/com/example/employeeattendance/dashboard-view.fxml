@@ -108,7 +108,7 @@
             </DropShadow>
          </effect>
       </ComboBox>
-      <LineChart layoutX="262.0" layoutY="87.0" prefHeight="379.0" prefWidth="536.0">
+      <LineChart fx:id="lineChart" layoutX="262.0" layoutY="87.0" prefHeight="379.0" prefWidth="536.0" title="Daily attendance Tracking ">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
