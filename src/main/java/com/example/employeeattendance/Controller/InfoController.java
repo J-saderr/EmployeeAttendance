@@ -66,7 +66,7 @@ public class InfoController extends MainController implements Initializable {
     public UserInfo showInfo(){
         UserInfo info1 = null;
         try {
-            String sql = "SELECT * FROM information WHERE id = " + getData.userid;
+            String sql = "SELECT * FROM infomation WHERE id = " + getData.userid;
             Connection connection = connectDb();
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -78,7 +78,7 @@ public class InfoController extends MainController implements Initializable {
                         resultSet.getString("Name"),
                         resultSet.getString("Position"),
                         resultSet.getString("Department"),
-                        resultSet.getDate("Date _of_Birth"),
+                        resultSet.getDate("Date_of_Birth"),
                         resultSet.getString("First_Name"), //cập nhật thêm cột First_Name, Last_Name và Bio trong data
                         resultSet.getString("Last_Name")
                 );

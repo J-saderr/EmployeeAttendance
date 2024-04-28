@@ -96,6 +96,7 @@ public class HomeController extends MainController implements Initializable{
             });
         });
     }
+
     public UserInfo showInfo1(){
         UserInfo info1 = null;
         try {
@@ -142,7 +143,7 @@ public class HomeController extends MainController implements Initializable{
                             resultSet.getInt("Absent"),
                             resultSet.getInt("Bonus"),
                             resultSet.getInt("Income"),
-                            resultSet.getInt("Pernalty")
+                            resultSet.getInt("Penalty")
                     );
                 }
 
@@ -167,7 +168,7 @@ public class HomeController extends MainController implements Initializable{
                             resultSet.getInt("Absent"),
                             resultSet.getInt("Bonus"),
                             resultSet.getInt("Income"),
-                            resultSet.getInt("Pernalty")
+                            resultSet.getInt("Penalty")
                     );
                 }
 
@@ -204,6 +205,7 @@ public class HomeController extends MainController implements Initializable{
         if ("January".equals(selectedValue)) {
             String sql = "SELECT * FROM attend_record_jan";
             try {
+
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -217,7 +219,9 @@ public class HomeController extends MainController implements Initializable{
                             new PieChart.Data("Late", lateCount),
                             new PieChart.Data("Absent", absentCount)
                     );
+
                     pieChart.setData(pieChartData);
+
                     pieChart.setVisible(true);
                     System.out.println("on");
                 }
