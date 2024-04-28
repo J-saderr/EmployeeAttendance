@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.chart.PieChart?>
@@ -18,12 +20,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.collections.ObservableList?>
 
-<?import java.lang.String?>
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.Controller.HomeController">
    <children>
       <VBox prefHeight="682.0" prefWidth="0.0">
@@ -127,17 +124,17 @@
                         <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="name" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="172.0" layoutY="14.0" prefHeight="25.0" prefWidth="117.0" textFill="#132fba">
+                  <Label fx:id="name" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="116.0" layoutY="14.0" prefHeight="25.0" prefWidth="208.0" textFill="#132fba">
                      <font>
                         <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="position" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="172.0" layoutY="46.0" prefHeight="25.0" prefWidth="117.0" textFill="#132fba">
+                  <Label fx:id="position" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="101.0" layoutY="46.0" prefHeight="25.0" prefWidth="226.0" textFill="#132fba">
                      <font>
                         <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
                   </Label>
-                  <Label fx:id="department" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="172.0" layoutY="77.0" prefHeight="25.0" prefWidth="117.0" textFill="#132fba">
+                  <Label fx:id="department" alignment="TOP_LEFT" graphicTextGap="3.0" layoutX="137.0" layoutY="77.0" prefHeight="25.0" prefWidth="185.0" textFill="#132fba">
                      <font>
                         <Font name="Montserrat SemiBold" size="16.0" />
                      </font>
@@ -327,11 +324,11 @@
                   <Image url="@icon/avatar.png" />
                </image>
             </ImageView>
-            <ComboBox  fx:id="comboBox" layoutX="393.0" layoutY="28.0" prefHeight="43.0" prefWidth="123.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+            <ComboBox fx:id="comboBox" layoutX="393.0" layoutY="28.0" prefHeight="43.0" prefWidth="123.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="January"/>
-                     <String fx:value="February"/>
+                     <String fx:value="January" />
+                     <String fx:value="February" />
                   </FXCollections>
                </items>
                <effect>
