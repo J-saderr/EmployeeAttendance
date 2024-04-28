@@ -66,7 +66,9 @@ public class InfoController extends MainController implements Initializable {
     public UserInfo showInfo(){
         UserInfo info1 = null;
         try {
-            String sql = "SELECT * FROM infomation WHERE id = " + getData.userid;
+
+            String sql = "SELECT * FROM information WHERE id = " + getData.userid;
+          
             Connection connection = connectDb();
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

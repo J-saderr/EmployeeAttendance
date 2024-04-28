@@ -55,6 +55,7 @@ public class LoginController implements Initializable {
             alert.errorMessage("Incorrect Username/Password");
         } else {
             String selectData1 = "SELECT * FROM logininfo WHERE "
+
                     + "User_id = ? and Password = ? and Position = 'User'"; //Account user
             String selectData2 = "SELECT * FROM logininfo WHERE "
                     + "User_id = ? and Password = ? and Position = 'Admin'"; //Account admin
