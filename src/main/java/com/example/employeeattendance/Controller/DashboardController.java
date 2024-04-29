@@ -38,11 +38,15 @@ public class DashboardController extends MainController implements Initializable
     }
     public void updateLineChart(){
         String selectedValue = comboBox.getValue();
+        Connection connection = connectDb();
+
+
+
 
         if ("January".equals(selectedValue)) {
+            lineChart.getData().clear();
+            String sql = "SELECT DATE_FORMAT(Checkin_DateTime, '%m-%d') as date, HOUR(TIME(Checkin_DateTime)) + MINUTE(TIME(Checkin_DateTime)) / 60.0 as hours FROM attendancetracking_jan WHERE ID = " + getData.userid;
             try {
-                String sql = "SELECT DATE_FORMAT(Checkin_DateTime, '%Y-%m-%d') as date, HOUR(TIME(Checkin_DateTime)) + MINUTE(TIME(Checkin_DateTime)) / 60.0 as hours FROM attendancetracking_jan WHERE ID = " + getData.userid;
-                Connection connection = connectDb();
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -52,22 +56,37 @@ public class DashboardController extends MainController implements Initializable
                 while (resultSet.next()) {
                     String date = resultSet.getString("date");
                     double hours = resultSet.getDouble("hours");
+
+                    if (!resultSet.wasNull()) {
+                        XYChart.Data<String, Number> data = new XYChart.Data<>(date, hours);
+                        series.getData().add(data);
+                    }
+
                     XYChart.Data<String, Number> data = new XYChart.Data<>(date, hours);
                     series.getData().add(data);
                 }
 
                 series.setName("Daily Attendance Tracking");
                 lineChart.getData().add(series);
+                lineChart.setVisible(true);
 
                 preparedStatement.close();
                 connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         } else if ("February".equals(selectedValue)) {
+            lineChart.getData().clear();
+            String sql = "SELECT DATE_FORMAT(Checkin_DateTime, '%m-%d') as date, HOUR(TIME(Checkin_DateTime)) + MINUTE(TIME(Checkin_DateTime)) / 60.0 as hours FROM attendancetracking_feb WHERE ID = " + getData.userid;
             try {
-                String sql = "SELECT DATE(Checkin_DateTime) as date, TIME(Checkin_DateTime) as hours FROM attendancetracking_feb WHERE ID = " + getData.userid;
-                Connection connection = connectDb();
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -77,6 +96,12 @@ public class DashboardController extends MainController implements Initializable
                 while (resultSet.next()) {
                     String date = resultSet.getString("date");
                     double hours = resultSet.getDouble("hours");
+
+                    if (!resultSet.wasNull()) {
+                        XYChart.Data<String, Number> data = new XYChart.Data<>(date, hours);
+                        series.getData().add(data);
+                    }
+
                     XYChart.Data<String, Number> data = new XYChart.Data<>(date, hours);
                     series.getData().add(data);
                 }
@@ -86,8 +111,17 @@ public class DashboardController extends MainController implements Initializable
 
                 preparedStatement.close();
                 connection.close();
+
             } catch (SQLException e) {
                 e.printStackTrace();
+            } finally {
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
