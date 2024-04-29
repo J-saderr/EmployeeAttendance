@@ -19,7 +19,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
+<?import javafx.collections.FXCollections?>
 
+<?import java.lang.String?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1147.0" styleClass="tab" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.Controller.DashboardController">
    <children>
       <HBox prefHeight="682.0" prefWidth="231.0">
@@ -99,7 +101,13 @@
             </AnchorPane>
          </children>
       </HBox>
-      <ComboBox layoutX="262.0" layoutY="26.0" prefHeight="43.0" prefWidth="117.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+      <ComboBox fx:id = "comboBox" layoutX="262.0" layoutY="26.0" prefHeight="43.0" prefWidth="117.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="January"/>
+               <String fx:value="February"/>
+            </FXCollections>
+         </items>
          <effect>
             <DropShadow>
                <color>
@@ -108,7 +116,8 @@
             </DropShadow>
          </effect>
       </ComboBox>
-      <LineChart layoutX="262.0" layoutY="87.0" prefHeight="379.0" prefWidth="536.0">
+
+      <LineChart fx:id="lineChart" layoutX="262.0" layoutY="87.0" prefHeight="379.0" prefWidth="536.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
