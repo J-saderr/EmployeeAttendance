@@ -22,7 +22,7 @@ public class UserInfo {
         this.position=position;
         this.department=department;
     }
-    public UserInfo(int id, String name, String position, String department, Date date,String firstname, String lastname){
+    public UserInfo(int id, String name, String position, String department, Date date){
         this.id=id;
         this.name=name;
         this.position=position;

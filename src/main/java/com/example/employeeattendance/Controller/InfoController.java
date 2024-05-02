@@ -50,7 +50,7 @@ public class InfoController extends MainController implements Initializable {
     private Pane inner_pane1;
 
     @FXML
-    private TextField lastname;
+    private TextField full_name;
 
     @FXML
     private TextField positions;
@@ -80,9 +80,7 @@ public class InfoController extends MainController implements Initializable {
                         resultSet.getString("Name"),
                         resultSet.getString("Position"),
                         resultSet.getString("Department"),
-                        resultSet.getDate("Date_of_Birth"),
-                        resultSet.getString("First_Name"), //cập nhật thêm cột First_Name, Last_Name và Bio trong data
-                        resultSet.getString("Last_Name")
+                        resultSet.getDate("Date _of_Birth")
                 );
             }
             resultSet.close();
@@ -103,8 +101,7 @@ public class InfoController extends MainController implements Initializable {
                 department.setText(userInfo.getDepartment());
                 dateOfBirth.setText(String.valueOf(userInfo.getDate()));
                 id.setText(String.valueOf(userInfo.getId()));
-                firstname.setText(userInfo.getFirstname());
-                lastname.setText((userInfo.getLastname()));
+                full_name.setText((userInfo.getName()));
             });
         }
     }

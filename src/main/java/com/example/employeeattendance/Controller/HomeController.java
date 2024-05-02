@@ -206,7 +206,7 @@ public class HomeController extends MainController implements Initializable{
         if ("January".equals(selectedValue)) {
             String sql = "SELECT * FROM attend_record_jan";
             try {
-              
+
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -216,9 +216,9 @@ public class HomeController extends MainController implements Initializable{
                     int absentCount = resultSet.getInt("total_absent");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                            new PieChart.Data("On time", onTimeCount),
-                            new PieChart.Data("Late", lateCount),
-                            new PieChart.Data("Absent", absentCount)
+                            new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
+                            new PieChart.Data("Late (" + lateCount + ")", lateCount),
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount)
                     );
 
                     pieChart.setData(pieChartData);
@@ -252,9 +252,9 @@ public class HomeController extends MainController implements Initializable{
                     int absentCount = resultSet.getInt("total_absent");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                            new PieChart.Data("On time", onTimeCount),
-                            new PieChart.Data("Late", lateCount),
-                            new PieChart.Data("Absent", absentCount)
+                            new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
+                            new PieChart.Data("Late (" + lateCount + ")", lateCount),
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount)
                     );
                     pieChart.setData(pieChartData);
                     System.out.println("off");
