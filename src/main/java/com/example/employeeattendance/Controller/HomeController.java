@@ -204,7 +204,7 @@ public class HomeController extends MainController implements Initializable{
         String selectedValue = comboBox.getValue();
 
         if ("January".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_jan";
+            String sql = "SELECT * FROM attend_record_jan WHERE id =" + getData.userid;
             try {
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -241,7 +241,7 @@ public class HomeController extends MainController implements Initializable{
             }
         }
         else if ("February".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_feb";
+            String sql = "SELECT * FROM attend_record_feb WHERE id = " + getData.userid;
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
