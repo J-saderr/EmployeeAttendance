@@ -80,7 +80,7 @@ public class InfoController extends MainController implements Initializable {
                         resultSet.getString("Name"),
                         resultSet.getString("Position"),
                         resultSet.getString("Department"),
-                        resultSet.getDate("Date _of_Birth")
+                        resultSet.getDate("Date_of_Birth")
                 );
             }
             resultSet.close();
@@ -112,7 +112,7 @@ public class InfoController extends MainController implements Initializable {
     }
 
     private void saveBio(String bio) {
-        String updateSql = "UPDATE information SET Bio = ? WHERE id = " + getData.userid;
+        String updateSql = "UPDATE information SET Bio = ? WHERE ID = " + getData.userid;
         Connection connect = connectDb();
         PreparedStatement updatePrepare = null;
         try {
