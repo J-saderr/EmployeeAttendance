@@ -86,43 +86,7 @@ COMBO BOX STYLE
 /*
 PIECHART COLOR
 */
-/* absent */
-.default-color0.chart-pie {
-    -fx-pie-color: #F3CA52;
-}
 
-/* late */
-.default-color1.chart-pie {
-    -fx-pie-color: #8B322C;
-}
-
-/* in time */
-.default-color2.chart-pie {
-    -fx-pie-color: #AFD198;
-}
-
-/* abs appr */
-.default-color3.chart-pie {
-    -fx-pie-color: #D1BB9E;
-}
-
-.table-view {
-    -fx-font-family: "Montserrat";
-    -fx-pref-width: 630px; /*7 column*/
-}
-
-.table-view .table-column {
-    -fx-pref-width: 90px;
-}
-/*Table header color*/
-.table-view .column-header {
-    -fx-font-family: "Montserrat SemiBold";
-    -fx-background-color: #799cf0;
-    -fx-pref-height: 30px;
-}
-
-/*Table header color*/
-.table-view .column-header .label{
-    -fx-text-fill: #fffefa;
-    -fx-font-size: 15px;
-}
+.default-color0.chart-pie { -fx-pie-color: #132FBA; }
+.default-color1.chart-pie { -fx-pie-color: #799CF0; }
+.default-color2.chart-pie { -fx-pie-color: #FFF6D2; }
