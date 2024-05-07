@@ -70,3 +70,25 @@
     -fx-background-color: #132fba;
     -fx-background-radius: 30px 30px 30px 30px;
 }
+
+/*PIE CHART COLOR*/
+
+/* absent */
+.default-color0.chart-pie {
+    -fx-pie-color: #A34343;
+}
+
+/* late */
+.default-color1.chart-pie {
+    -fx-pie-color: #FFC470;
+}
+
+/* in time */
+.default-color2.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+/* abs appr */
+.default-color3.chart-pie {
+    -fx-pie-color: #4793AF;
+}
