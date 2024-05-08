@@ -56,7 +56,7 @@ public class DashboardController extends MainController implements Initializable
 
     public ObservableList<Attendance> getAttendanceByMonth(String month) throws SQLException {
         ObservableList<Attendance> result = FXCollections.observableArrayList();
-
+        //fix here, modified the string.format
         String sql = String.format("select * from attendance%s WHERE id = ", month) + getData.userid;
 
         Connection connection = connectDb();
