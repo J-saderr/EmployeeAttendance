@@ -75,12 +75,12 @@
 
 /* absent */
 .default-color0.chart-pie {
-    -fx-pie-color: #A34343;
+    -fx-pie-color: #F3CA52;
 }
 
 /* late */
 .default-color1.chart-pie {
-    -fx-pie-color: #FFC470;
+    -fx-pie-color: #8B322C;
 }
 
 /* in time */
@@ -90,5 +90,5 @@
 
 /* abs appr */
 .default-color3.chart-pie {
-    -fx-pie-color: #4793AF;
+    -fx-pie-color: #D1BB9E;
 }

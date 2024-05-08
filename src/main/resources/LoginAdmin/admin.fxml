@@ -14,26 +14,26 @@
 
 <AnchorPane fx:id="background" prefHeight="712.0" prefWidth="965.0" style="-fx-background-color: #FFFEFA;" stylesheets="@admincss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.AdminController">
    <children>
-      <AnchorPane prefHeight="712.0" prefWidth="218.0" styleClass="anchor-pane" stylesheets="@admincss.css">
+      <AnchorPane prefHeight="712.0" prefWidth="239.0" styleClass="anchor-pane" stylesheets="@admincss.css">
          <children>
-            <Button fx:id="HomeButton" alignment="CENTER_RIGHT" layoutX="54.0" layoutY="170.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="169.0" stylesheets="@admincss.css" text="Home" textFill="#132fba">
+            <Button fx:id="HomeButton" alignment="CENTER_RIGHT" layoutX="72.0" layoutY="170.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="169.0" stylesheets="@admincss.css" text="Home" textFill="#132fba">
                <font>
                   <Font name="Montserrat Semi Bold" size="25.0" />
                </font>
             </Button>
-            <ImageView fitHeight="39.0" fitWidth="45.0" layoutX="76.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="39.0" fitWidth="45.0" layoutX="93.0" layoutY="181.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@home1.png" />
                </image>
             </ImageView>
-            <AnchorPane fx:id="anchorpane_1" layoutX="8.0" layoutY="31.0" prefHeight="86.0" prefWidth="206.0">
+            <AnchorPane fx:id="anchorpane_1" layoutX="8.0" layoutY="31.0" prefHeight="86.0" prefWidth="225.0">
                <children>
-                  <Label layoutX="78.0" layoutY="12.0" prefWidth="122.0" text="BetterDay" textFill="#132fba">
+                  <Label layoutX="78.0" layoutY="12.0" prefHeight="27.0" prefWidth="137.0" text="BCHECKING" textFill="#132fba">
                      <font>
                         <Font name="Montserrat Black" size="21.0" />
                      </font>
                   </Label>
-                  <Label layoutX="102.0" layoutY="52.0" text="Admin" textFill="#132fba">
+                  <Label layoutX="114.0" layoutY="52.0" text="Admin" textFill="#132fba">
                      <font>
                         <Font name="Montserrat SemiBold" size="18.0" />
                      </font>
@@ -43,17 +43,17 @@
                         <Image url="@building.png" />
                      </image>
                   </ImageView>
-                  <Line endX="19.333358764648438" endY="3.814697265625E-6" layoutX="178.0" layoutY="42.0" startX="-100.0" stroke="#799cf0" strokeWidth="2.0" />
+                  <Line endX="37.33335876464844" endY="3.814697265625E-6" layoutX="178.0" layoutY="42.0" startX="-100.0" stroke="#799cf0" strokeWidth="2.0" />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
-      <Label layoutX="256.0" layoutY="34.0" text="Average Time">
+      <Label layoutX="278.0" layoutY="34.0" text="Average Time">
          <font>
             <Font name="Montserrat Semi Bold" size="23.0" />
          </font></Label>
       <PieChart fx:id="pieChart" layoutX="416.0" layoutY="45.0" prefHeight="390.0" prefWidth="505.0" />
-      <ComboBox fx:id="ButtonMonth" layoutX="256.0" layoutY="80.0" prefHeight="39.0" prefWidth="160.0" promptText="Month" stylesheets="@admincss.css" />
+      <ComboBox fx:id="ButtonMonth" layoutX="278.0" layoutY="80.0" prefHeight="39.0" prefWidth="160.0" promptText="Month" stylesheets="@admincss.css" />
       <TableView fx:id="table" layoutX="279.0" layoutY="435.0" prefHeight="245.0" prefWidth="632.0">
         <columns>
           <TableColumn fx:id="ID" prefWidth="75.0" text="ID" />
@@ -65,6 +65,6 @@
             <TableColumn fx:id="Overtime" prefWidth="75.0" text="Overtime" />
         </columns>
       </TableView>
-      <Line endX="54.999969482421875" endY="7.62939453125E-6" layoutX="358.0" layoutY="73.0" startX="-100.0" stroke="#799cf0" strokeWidth="2.0" />
+      <Line endX="54.999969482421875" endY="7.62939453125E-6" layoutX="380.0" layoutY="73.0" startX="-100.0" stroke="#799cf0" strokeWidth="2.0" />
    </children>
 </AnchorPane>
