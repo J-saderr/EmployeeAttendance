@@ -126,11 +126,10 @@
       </LineChart>
       <TableView fx:id="tbData" layoutX="393.0" layoutY="437.0" prefHeight="219.0" prefWidth="604.0">
          <columns>
-            <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-            <TableColumn fx:id="colDate" prefWidth="75.0" text="Date" />
-            <TableColumn fx:id="colCheckin" prefWidth="106.66668701171875" text="Checkin" />
-            <TableColumn fx:id="colCheckout" prefWidth="134.22216796875" text="Checkout" />
-            <TableColumn fx:id="colOvertime" prefWidth="208.888916015625" text="Overtime" />
+            <TableColumn fx:id="colDate" prefWidth="231.0" text="Date" />
+            <TableColumn fx:id="colCheckin" prefWidth="118.0" text="Checkin" />
+            <TableColumn fx:id="colCheckout" prefWidth="116.5" text="Checkout" />
+            <TableColumn fx:id="colOvertime" prefWidth="137.5" text="Overtime" />
          </columns>
       </TableView>
    </children>

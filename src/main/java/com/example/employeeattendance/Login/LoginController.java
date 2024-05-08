@@ -98,7 +98,7 @@ public class LoginController implements Initializable {
                     if (result.next()) {
                         getData.userid = login_userid.getText();
                         alert.successMessage("Successfully Login!");
-                        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/info-view.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/home-view.fxml"));
                         Stage stage = new Stage();
                         Scene scene = new Scene(root);
 

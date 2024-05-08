@@ -1,11 +1,12 @@
 package com.example.employeeattendance.models;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class Attendance {
     private int id;
-    private LocalDate date;
+    private Date date;
     private String checkin;
     private String checkout;
     private String overtime;
@@ -13,7 +14,7 @@ public class Attendance {
     public Attendance() {
     }
 
-    public Attendance(int id, LocalDate date, String checkin, String checkout, String overtime) {
+    public Attendance(int id, Date date, String checkin, String checkout, String overtime) {
         this.id = id;
         this.date = date;
         this.checkin = checkin;
@@ -29,11 +30,11 @@ public class Attendance {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
