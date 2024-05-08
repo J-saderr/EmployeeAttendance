@@ -30,7 +30,7 @@ public class DashboardController extends MainController implements Initializable
     @FXML
     private LineChart<String, Number> lineChart;
     @FXML
-    private TableView<Attendance> tbData;
+    public TableView<Attendance> tbData;
     @FXML
     private ComboBox<String> comboBox;
     private ObservableList<Attendance> data = FXCollections.observableArrayList();
@@ -57,7 +57,7 @@ public class DashboardController extends MainController implements Initializable
     public ObservableList<Attendance> getAttendanceByMonth(String month) throws SQLException {
         ObservableList<Attendance> result = FXCollections.observableArrayList();
 
-        String sql = String.format("select * from attendance%s", month);
+        String sql = String.format("select * from attendance%s WHERE id = ", month) + getData.userid;
 
         Connection connection = connectDb();
 
@@ -69,18 +69,18 @@ public class DashboardController extends MainController implements Initializable
         while(resultSet.next()){
             Attendance attendance = new Attendance();
             attendance.setId(resultSet.getInt(1));
-            attendance.setDate(resultSet.getDate(2).toLocalDate());
+            attendance.setDate(resultSet.getDate(2));
 
-            Timestamp checkinTimestamp = resultSet.getTimestamp(3);
+            Time checkinTimestamp = resultSet.getTime(3);
             String checkinTime = sdf.format(checkinTimestamp);
             attendance.setCheckin(checkinTime);
 
-            Timestamp checkoutTimestamp = resultSet.getTimestamp(4);
+            Time checkoutTimestamp = resultSet.getTime(4);
             String checkoutTime = sdf.format(checkoutTimestamp);
             attendance.setCheckout(checkoutTime);
 
-            Timestamp overtimeTimestamp = resultSet.getTimestamp(5);
-            String overtimeTime = sdf.format(overtimeTimestamp);
+            Time overtime = resultSet.getTime(5);
+            String overtimeTime = sdf.format(overtime);
             attendance.setOvertime(overtimeTime);
 
             result.add(attendance);
@@ -90,7 +90,7 @@ public class DashboardController extends MainController implements Initializable
     }
 
     private void showOnTable() throws SQLException {
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colCheckin.setCellValueFactory(new PropertyValueFactory<>("checkin"));
         colCheckout.setCellValueFactory(new PropertyValueFactory<>("checkout"));
@@ -98,6 +98,26 @@ public class DashboardController extends MainController implements Initializable
 
         data = getAttendanceByMonth("jan");
         tbData.setItems(data);
+    }
+
+    public void onSelected(ActionEvent actionEvent) {
+        if(comboBox.getValue().equals("January")){
+            data = FXCollections.observableArrayList();
+            try {
+                data = getAttendanceByMonth("jan");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            tbData.setItems(data);
+        } else if(comboBox.getValue().equals("February")){
+            data = FXCollections.observableArrayList();
+            try {
+                data = getAttendanceByMonth("feb");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            tbData.setItems(data);
+        }
     }
 
     public void updateLineChart(){
@@ -189,26 +209,6 @@ public class DashboardController extends MainController implements Initializable
                     e.printStackTrace();
                 }
             }
-        }
-    }
-
-    public void onSelected(ActionEvent actionEvent) {
-        if(comboBox.getValue().equals("January")){
-            data = FXCollections.observableArrayList();
-            try {
-                data = getAttendanceByMonth("jan");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            tbData.setItems(data);
-        } else if(comboBox.getValue().equals("February")){
-            data = FXCollections.observableArrayList();
-            try {
-                data = getAttendanceByMonth("feb");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            tbData.setItems(data);
         }
     }
 }
