@@ -241,7 +241,7 @@ public class HomeController extends MainController implements Initializable{
             }
         }
         else if ("February".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_feb";
+            String sql = "SELECT * FROM attend_record_feb WHERE id = ?";
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();

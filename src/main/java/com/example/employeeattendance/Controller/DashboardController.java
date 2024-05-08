@@ -56,38 +56,54 @@ public class DashboardController extends MainController implements Initializable
 
     public ObservableList<Attendance> getAttendanceByMonth(String month) throws SQLException {
         ObservableList<Attendance> result = FXCollections.observableArrayList();
-        //fix here, modified the string.format
-        String sql = String.format("select * from attendance%s WHERE id = ", month) + getData.userid;
 
         Connection connection = connectDb();
 
+        // Fix the SQL query to use parameterized placeholders for id and month
+        String sql = String.format("SELECT * FROM attendance%s WHERE id = ?", month);
+
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        // Assuming getData.userid is the user ID as a string, convert it to an integer
+        int userId = Integer.parseInt(getData.userid);
+
+        // Set the parameter for id
+        preparedStatement.setInt(1, userId);
+
         ResultSet resultSet = preparedStatement.executeQuery();
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
-        while(resultSet.next()){
+        while (resultSet.next()) {
             Attendance attendance = new Attendance();
             attendance.setId(resultSet.getInt(1));
-            attendance.setDate(resultSet.getDate(2));
 
+            // Handle NULL values for the date column
+            Date date = resultSet.getDate(2);
+            attendance.setDate(date);
+
+            // Handle NULL values for other columns
             Time checkinTimestamp = resultSet.getTime(3);
-            String checkinTime = sdf.format(checkinTimestamp);
-            attendance.setCheckin(checkinTime);
+            attendance.setCheckin(checkinTimestamp != null ? sdf.format(checkinTimestamp) : null);
 
             Time checkoutTimestamp = resultSet.getTime(4);
-            String checkoutTime = sdf.format(checkoutTimestamp);
-            attendance.setCheckout(checkoutTime);
+            attendance.setCheckout(checkoutTimestamp != null ? sdf.format(checkoutTimestamp) : null);
 
             Time overtime = resultSet.getTime(5);
-            String overtimeTime = sdf.format(overtime);
-            attendance.setOvertime(overtimeTime);
+            attendance.setOvertime(overtime != null ? sdf.format(overtime) : null);
 
             result.add(attendance);
         }
 
+
+        // Close resources
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
         return result;
     }
+
 
     private void showOnTable() throws SQLException {
 
