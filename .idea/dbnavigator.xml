@@ -6,14 +6,32 @@
   </component>
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
+  </component>
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="false" />
+    <autoscroll-from-editor value="true" />
+    <show-object-properties value="true" />
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="c521afb2-3074-4252-9a0e-f7a94c117845" dataset="employee.attend_record_jan" active-filter-id="57aa6e8b-bb82-4f2d-bdff-851d062aa5a5">
+      <filter id="57aa6e8b-bb82-4f2d-bdff-851d062aa5a5" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="approval" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="c521afb2-3074-4252-9a0e-f7a94c117845" dataset="employee.attend_record_feb" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ObjectQuickFilterManager">
+    <last-used-operator value="EQUAL" />
+    <filters />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections />
