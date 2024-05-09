@@ -58,8 +58,6 @@ public class AdminController extends MainController implements Initializable {
         ButtonMonth.getSelectionModel().selectFirst();
         ButtonMonth.setValue("January");
         Platform.runLater(() -> {
-            ButtonMonth.setItems(FXCollections.observableArrayList("January", "February"));
-            ButtonMonth.setValue("January");
             updateLabels();
             updatePieChart();
             ButtonMonth.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -152,7 +150,6 @@ public class AdminController extends MainController implements Initializable {
 
                     pieChart.setData(pieChartData);
                     pieChart.setVisible(true);
-                    System.out.println("on");
                 }
 
                 resultSet.close();
@@ -190,7 +187,6 @@ public class AdminController extends MainController implements Initializable {
                             new PieChart.Data("Overtime ("+ovtCount + ")",ovtCount)
                     );
                     pieChart.setData(pieChartData);
-                    System.out.println("off");
                 }
 
                 resultSet.close();

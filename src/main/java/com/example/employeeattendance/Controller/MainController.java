@@ -23,7 +23,7 @@ public class MainController {
       
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee", "root", "Miguel10@"); // address, database username, database password
+            Connection connect = DriverManager.getConnection("jdbc:mysql://10.236.5.117:3306/employee", "theo", "1"); // address, database username, database password
             return connect;
         } catch(Exception e){ e.printStackTrace();}
 
@@ -31,7 +31,7 @@ public class MainController {
     }
   
     public void switchToHome(ActionEvent actionEvent) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/admin-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/home-view.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
