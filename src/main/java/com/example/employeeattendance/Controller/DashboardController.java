@@ -21,8 +21,6 @@ import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
 public class DashboardController extends MainController implements Initializable {
-
-    public TableColumn colId;
     public TableColumn colCheckin;
     public TableColumn colCheckout;
     public TableColumn colDate;
@@ -42,7 +40,6 @@ public class DashboardController extends MainController implements Initializable
             comboBox.setValue("January");
             updateLineChart();
             comboBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-
                 updateLineChart();
             });
         });
@@ -56,33 +53,22 @@ public class DashboardController extends MainController implements Initializable
 
     public ObservableList<Attendance> getAttendanceByMonth(String month) throws SQLException {
         ObservableList<Attendance> result = FXCollections.observableArrayList();
-
         Connection connection = connectDb();
-
-        // Fix the SQL query to use parameterized placeholders for id and month
         String sql = String.format("SELECT * FROM attendance%s WHERE id = ?", month);
-
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-        // Assuming getData.userid is the user ID as a string, convert it to an integer
         int userId = Integer.parseInt(getData.userid);
-
-        // Set the parameter for id
         preparedStatement.setInt(1, userId);
-
         ResultSet resultSet = preparedStatement.executeQuery();
-
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
         while (resultSet.next()) {
             Attendance attendance = new Attendance();
             attendance.setId(resultSet.getInt(1));
 
-            // Handle NULL values for the date column
             Date date = resultSet.getDate(2);
             attendance.setDate(date);
 
-            // Handle NULL values for other columns
             Time checkinTimestamp = resultSet.getTime(3);
             attendance.setCheckin(checkinTimestamp != null ? sdf.format(checkinTimestamp) : null);
 
@@ -95,8 +81,6 @@ public class DashboardController extends MainController implements Initializable
             result.add(attendance);
         }
 
-
-        // Close resources
         resultSet.close();
         preparedStatement.close();
         connection.close();
@@ -104,9 +88,7 @@ public class DashboardController extends MainController implements Initializable
         return result;
     }
 
-
     private void showOnTable() throws SQLException {
-
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colCheckin.setCellValueFactory(new PropertyValueFactory<>("checkin"));
         colCheckout.setCellValueFactory(new PropertyValueFactory<>("checkout"));
@@ -139,9 +121,6 @@ public class DashboardController extends MainController implements Initializable
     public void updateLineChart(){
         String selectedValue = comboBox.getValue();
         Connection connection = connectDb();
-
-
-
 
         if ("January".equals(selectedValue)) {
             lineChart.getData().clear();
