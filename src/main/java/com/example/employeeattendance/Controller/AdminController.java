@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -130,21 +131,23 @@ public class AdminController extends MainController implements Initializable {
         String selectedValue = ButtonMonth.getValue();
 
         if ("January".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_jan" ;
+            String sql = "SELECT * FROM avg WHERE month = 'jan'";
             try {
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
                 if (resultSet.next()) {
-                    int onTimeCount = resultSet.getInt("in_time");
-                    int lateCount = resultSet.getInt("late");
-                    int absentCount = resultSet.getInt("total_absent");
+                    Double onTime = resultSet.getDouble("in_time");
+                    Double lateCount = resultSet.getDouble("late");
+                    Double absentCount = resultSet.getDouble("total_ab");
+                    Double ovtCount = resultSet.getDouble("overtime");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                            new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
+                            new PieChart.Data("On time (" + onTime + ")", onTime),
                             new PieChart.Data("Late (" + lateCount + ")", lateCount),
-                            new PieChart.Data("Absent (" + absentCount + ")", absentCount)
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount),
+                            new PieChart.Data("Overtime ("+ovtCount + ")",ovtCount)
                     );
 
                     pieChart.setData(pieChartData);
@@ -167,20 +170,24 @@ public class AdminController extends MainController implements Initializable {
             }
         }
         else if ("February".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_feb WHERE id = " + getData.userid;
+            String sql = "SELECT * FROM avg WHERE month = 'feb'";
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
                 if (resultSet.next()) {
-                    int onTimeCount = resultSet.getInt("in_time");
-                    int lateCount = resultSet.getInt("late");
-                    int absentCount = resultSet.getInt("total_absent");
+
+                    Double onTimeCount = resultSet.getDouble("in_time");
+                    Double lateCount = resultSet.getDouble("late");
+                    Double absentCount = resultSet.getDouble("total_ab");
+                   Double ovtCount = resultSet.getDouble("overtime");
+
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                             new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
                             new PieChart.Data("Late (" + lateCount + ")", lateCount),
-                            new PieChart.Data("Absent (" + absentCount + ")", absentCount)
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount),
+                            new PieChart.Data("Overtime ("+ovtCount + ")",ovtCount)
                     );
                     pieChart.setData(pieChartData);
                     System.out.println("off");
@@ -202,4 +209,3 @@ public class AdminController extends MainController implements Initializable {
         }
     }
 }
-
