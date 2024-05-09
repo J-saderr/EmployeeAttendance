@@ -1,6 +1,9 @@
 package com.example.employeeattendance.Controller;
 
+import com.example.employeeattendance.UserInfo;
+import com.example.employeeattendance.getData;
 import com.example.employeeattendance.models.AttendRecord;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,12 +57,25 @@ public class AdminController extends MainController implements Initializable {
         ButtonMonth.getItems().addAll("January", "February");
         ButtonMonth.getSelectionModel().selectFirst();
         ButtonMonth.setValue("January");
+        Platform.runLater(() -> {
+            ButtonMonth.setItems(FXCollections.observableArrayList("January", "February"));
+            ButtonMonth.setValue("January");
+            updateLabels();
+            updatePieChart();
+            ButtonMonth.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                updateLabels();
+                updatePieChart();
+            });
+        });
+    }
+
+    private void updateLabels() {
     }
 
     private ObservableList<AttendRecord> getDataByMonth(String month) throws SQLException {
         ObservableList<AttendRecord> result = FXCollections.observableArrayList();
 
-        String sql = String.format("SELECT * FROM attend_record_%s", month);
+        String sql = String.format("select * from attend_record_%s", month);
 
         Connection connection = connectDb();
 
@@ -106,6 +123,88 @@ public class AdminController extends MainController implements Initializable {
                 tbData.setItems(data);
             } catch (SQLException e) {
                 e.printStackTrace();
+            }
+        }
+    }
+    public void updatePieChart() {
+        Connection connection = connectDb();
+        String selectedValue = ButtonMonth.getValue();
+
+        if ("January".equals(selectedValue)) {
+            String sql = "SELECT * FROM avg WHERE month = 'jan'";
+            try {
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                if (resultSet.next()) {
+                    Double onTime = resultSet.getDouble("in_time");
+                    Double lateCount = resultSet.getDouble("late");
+                    Double absentCount = resultSet.getDouble("total_ab");
+                    Double ovtCount = resultSet.getDouble("overtime");
+
+                    ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                            new PieChart.Data("On time (" + onTime + ")", onTime),
+                            new PieChart.Data("Late (" + lateCount + ")", lateCount),
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount),
+                            new PieChart.Data("Overtime ("+ovtCount + ")",ovtCount)
+                    );
+
+                    pieChart.setData(pieChartData);
+                    pieChart.setVisible(true);
+                    System.out.println("on");
+                }
+
+                resultSet.close();
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        else if ("February".equals(selectedValue)) {
+            String sql = "SELECT * FROM avg WHERE month = 'feb'";
+            try {
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                if (resultSet.next()) {
+
+                    Double onTimeCount = resultSet.getDouble("in_time");
+                    Double lateCount = resultSet.getDouble("late");
+                    Double absentCount = resultSet.getDouble("total_ab");
+                   Double ovtCount = resultSet.getDouble("overtime");
+
+
+                    ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+                            new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
+                            new PieChart.Data("Late (" + lateCount + ")", lateCount),
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount),
+                            new PieChart.Data("Overtime ("+ovtCount + ")",ovtCount)
+                    );
+                    pieChart.setData(pieChartData);
+                    System.out.println("off");
+                }
+
+                resultSet.close();
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (connection != null && !connection.isClosed()) {
+                        connection.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
