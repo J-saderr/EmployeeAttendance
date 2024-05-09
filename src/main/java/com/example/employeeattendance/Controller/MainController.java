@@ -31,7 +31,7 @@ public class MainController {
     }
   
     public void switchToHome(ActionEvent actionEvent) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/admin-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/home-view.fxml"));
         scene = new Scene(root);
         stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         stage.setScene(scene);
