@@ -223,7 +223,6 @@ public class HomeController extends MainController implements Initializable{
 
                     pieChart.setData(pieChartData);
                     pieChart.setVisible(true);
-                    System.out.println("on");
                 }
 
                 resultSet.close();
@@ -257,7 +256,6 @@ public class HomeController extends MainController implements Initializable{
                             new PieChart.Data("Absent (" + absentCount + ")", absentCount)
                     );
                     pieChart.setData(pieChartData);
-                    System.out.println("off");
                 }
 
                 resultSet.close();
