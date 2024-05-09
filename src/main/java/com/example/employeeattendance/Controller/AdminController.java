@@ -58,7 +58,7 @@ public class AdminController extends MainController implements Initializable {
     private ObservableList<AttendRecord> getDataByMonth(String month) throws SQLException {
         ObservableList<AttendRecord> result = FXCollections.observableArrayList();
 
-        String sql = String.format("select * from attendance_record_%s WHERE id = ", month);
+        String sql = String.format("SELECT * FROM attend_record_%s", month);
 
         Connection connection = connectDb();
 
