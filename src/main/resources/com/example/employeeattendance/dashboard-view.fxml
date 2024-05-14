@@ -100,7 +100,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <ComboBox fx:id="comboBox" layoutX="262.0" layoutY="26.0" onAction="#onSelected" prefHeight="43.0" prefWidth="117.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+      <ComboBox fx:id="comboBox" layoutX="262.0" layoutY="26.0" onAction="#onSelected" prefHeight="43.0" prefWidth="184.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="January" />

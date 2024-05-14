@@ -67,7 +67,7 @@ FRAME STYLE
 COMBO BOX STYLE
 */
 
-.month{
+.month {
     -fx-background-color: #132FBA;
     -fx-border-width: 3px 3px 3px 3px;
     -fx-border-radius: 20px;
@@ -79,6 +79,189 @@ COMBO BOX STYLE
     -fx-font-family: 'Montserrat';
 }
 
-.month .cell {
+.month .list-cell {
     -fx-text-fill: white;
+}
+
+.month .list-view .list-cell:filled:selected {
+    -fx-background-color: #0078D7;
+}
+
+.month .list-view .list-cell:filled:selected .text {
+    -fx-fill: white;
+}
+
+.month .list-view .list-cell:filled:hover {
+    -fx-background-color: #799CF0;
+    -fx-text-fill: white;
+}
+
+.month .list-view .list-cell:filled {
+    -fx-background-color: white;
+    -fx-text-fill: #132FBA;
+}
+
+/*
+PIECHART COLOR
+*/
+
+.default-color0.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color1.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color2.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color3.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color4.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color5.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color6.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color6.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color7.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color11.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color12.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color13.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color14.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color15.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color16.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color17.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color18.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color19.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color20.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color21.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color22.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color23.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color24.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color25.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color26.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color27.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color28.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color29.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color30.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color31.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color32.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+.default-color33.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+.default-color34.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+.default-color35.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+/*
+TABLE COLOR
+*/
+
+.table-view {
+    -fx-font-family: "Montserrat";
+    -fx-pref-width: 630px;
+}
+
+.table-view .table-column {
+    -fx-pref-width: 90px;
+}
+/*Table header color*/
+.table-view .column-header {
+    -fx-font-family: "Montserrat SemiBold";
+    -fx-background-color: #799cf0;
+    -fx-pref-height: 30px;
+}
+
+/*Table header color*/
+.table-view .column-header .label{
+    -fx-text-fill: #fffefa;
+    -fx-font-size: 15px;
 }
