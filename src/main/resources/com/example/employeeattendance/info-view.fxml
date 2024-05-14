@@ -116,7 +116,7 @@
                   <Font name="Montserrat SemiBold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="firstname" editable="false" layoutX="72.0" layoutY="200.0" prefHeight="30.0" prefWidth="724.0" styleClass="frame5" stylesheets="@style.css" text="Your Full Name">
+            <TextField fx:id="full_name" editable="false" layoutX="72.0" layoutY="200.0" prefHeight="30.0" prefWidth="724.0" styleClass="frame5" stylesheets="@style.css" text="Your Full Name">
                <font>
                   <Font name="Montserrat Medium" size="14.0" />
                </font>

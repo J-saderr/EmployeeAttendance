@@ -82,7 +82,7 @@ public class HomeController extends MainController implements Initializable{
     @FXML
     private PieChart pieChart;
 
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Platform.runLater(() -> {
@@ -96,6 +96,7 @@ public class HomeController extends MainController implements Initializable{
             });
         });
     }
+
     public UserInfo showInfo1(){
         UserInfo info1 = null;
         try {
@@ -142,7 +143,7 @@ public class HomeController extends MainController implements Initializable{
                             resultSet.getInt("Absent"),
                             resultSet.getInt("Bonus"),
                             resultSet.getInt("Income"),
-                            resultSet.getInt("Pernalty")
+                            resultSet.getInt("Penalty")
                     );
                 }
 
@@ -167,7 +168,8 @@ public class HomeController extends MainController implements Initializable{
                             resultSet.getInt("Absent"),
                             resultSet.getInt("Bonus"),
                             resultSet.getInt("Income"),
-                            resultSet.getInt("Pernalty")
+                            resultSet.getInt("Penalty")
+
                     );
                 }
 
@@ -202,8 +204,9 @@ public class HomeController extends MainController implements Initializable{
         String selectedValue = comboBox.getValue();
 
         if ("January".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_jan";
+            String sql = "SELECT * FROM attend_record_jan WHERE id =" + getData.userid;
             try {
+
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -213,13 +216,13 @@ public class HomeController extends MainController implements Initializable{
                     int absentCount = resultSet.getInt("total_absent");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                            new PieChart.Data("On time", onTimeCount),
-                            new PieChart.Data("Late", lateCount),
-                            new PieChart.Data("Absent", absentCount)
+                            new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
+                            new PieChart.Data("Late (" + lateCount + ")", lateCount),
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount)
                     );
+
                     pieChart.setData(pieChartData);
                     pieChart.setVisible(true);
-                    System.out.println("on");
                 }
 
                 resultSet.close();
@@ -237,7 +240,7 @@ public class HomeController extends MainController implements Initializable{
             }
         }
         else if ("February".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_feb";
+            String sql = "SELECT * FROM attend_record_feb WHERE id = " + getData.userid;
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
@@ -248,12 +251,11 @@ public class HomeController extends MainController implements Initializable{
                     int absentCount = resultSet.getInt("total_absent");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                            new PieChart.Data("On time", onTimeCount),
-                            new PieChart.Data("Late", lateCount),
-                            new PieChart.Data("Absent", absentCount)
+                            new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
+                            new PieChart.Data("Late (" + lateCount + ")", lateCount),
+                            new PieChart.Data("Absent (" + absentCount + ")", absentCount)
                     );
                     pieChart.setData(pieChartData);
-                    System.out.println("off");
                 }
 
                 resultSet.close();

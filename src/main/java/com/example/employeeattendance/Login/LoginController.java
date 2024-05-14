@@ -55,9 +55,10 @@ public class LoginController implements Initializable {
             alert.errorMessage("Incorrect Username/Password");
         } else {
             String selectData1 = "SELECT * FROM logininfo WHERE "
-                    + "User_id = ? and Password = ? and Position = 'user'"; //Account user
+
+                    + "User_id = ? and Password = ? and Position = 'User'"; //Account user
             String selectData2 = "SELECT * FROM logininfo WHERE "
-                    + "User_id = ? and Password = ? and Position = 'admin'"; //Account admin
+                    + "User_id = ? and Password = ? and Position = 'Admin'"; //Account admin
 
             connect = connectDb();
 
@@ -97,7 +98,7 @@ public class LoginController implements Initializable {
                     if (result.next()) {
                         getData.userid = login_userid.getText();
                         alert.successMessage("Successfully Login!");
-                        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/info-view.fxml"));
+                        Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/LoginAdmin/admin.fxml"));
                         Stage stage = new Stage();
                         Scene scene = new Scene(root);
 

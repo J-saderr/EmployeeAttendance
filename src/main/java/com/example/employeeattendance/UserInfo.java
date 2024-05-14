@@ -13,8 +13,6 @@ public class UserInfo {
     private int bonus;
     private int income;
     private Date date;
-    private String firstname;
-    private String lastname;
     public UserInfo(int id, String name, String position, String department, int baseSalary){
         this.id=id;
         this.name=name;
@@ -22,7 +20,7 @@ public class UserInfo {
         this.position=position;
         this.department=department;
     }
-    public UserInfo(int id, String name, String position, String department, Date date,String firstname, String lastname){
+    public UserInfo(int id, String name, String position, String department, Date date){
         this.id=id;
         this.name=name;
         this.position=position;
@@ -77,11 +75,4 @@ public class UserInfo {
         return id;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
 }
