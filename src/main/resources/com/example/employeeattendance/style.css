@@ -247,7 +247,7 @@ TABLE COLOR
 
 .table-view {
     -fx-font-family: "Montserrat";
-    -fx-pref-width: 630px; /*7 column*/
+    -fx-pref-width: 630px;
 }
 
 .table-view .table-column {

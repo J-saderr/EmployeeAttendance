@@ -99,7 +99,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <ComboBox layoutX="262.0" layoutY="26.0" prefHeight="43.0" prefWidth="117.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+      <ComboBox layoutX="262.0" layoutY="26.0" prefHeight="43.0" prefWidth="184.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
          <effect>
             <DropShadow>
                <color>

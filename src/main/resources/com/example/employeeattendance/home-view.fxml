@@ -324,7 +324,7 @@
                   <Image url="@icon/avatar.png" />
                </image>
             </ImageView>
-            <ComboBox fx:id="comboBox" layoutX="355.0" layoutY="28.0" prefHeight="43.0" prefWidth="161.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+            <ComboBox fx:id="comboBox" layoutX="345.0" layoutY="28.0" prefHeight="43.0" prefWidth="171.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="January" />
