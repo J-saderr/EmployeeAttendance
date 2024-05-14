@@ -250,9 +250,10 @@ TABLE COLOR
     -fx-pref-width: 630px;
 }
 
-.table-view .table-column {
-    -fx-pref-width: 90px;
+.table-view .table-cell {
+    -fx-alignment: center;
 }
+
 /*Table header color*/
 .table-view .column-header {
     -fx-font-family: "Montserrat SemiBold";

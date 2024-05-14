@@ -100,7 +100,7 @@
             </AnchorPane>
          </children>
       </HBox>
-      <ComboBox fx:id="comboBox" layoutX="262.0" layoutY="26.0" onAction="#onSelected" prefHeight="43.0" prefWidth="184.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
+      <ComboBox fx:id="comboBox" layoutX="949.0" layoutY="25.0" onAction="#onSelected" prefHeight="43.0" prefWidth="184.0" promptText="Month" styleClass="month" stylesheets="@style.css" visibleRowCount="5">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="January" />
@@ -116,7 +116,7 @@
          </effect>
       </ComboBox>
 
-      <LineChart fx:id="lineChart" layoutX="348.0" layoutY="69.0" prefHeight="379.0" prefWidth="649.0">
+      <LineChart fx:id="lineChart" layoutX="300.0" layoutY="57.0" prefHeight="379.0" prefWidth="649.0">
          <xAxis>
             <CategoryAxis side="BOTTOM" />
          </xAxis>
@@ -124,13 +124,16 @@
             <NumberAxis side="LEFT" />
          </yAxis>
       </LineChart>
-      <TableView fx:id="tbData" layoutX="393.0" layoutY="437.0" prefHeight="219.0" prefWidth="604.0">
+      <TableView fx:id="tbData" layoutX="319.0" layoutY="449.0" prefHeight="219.0" prefWidth="612.0">
          <columns>
-            <TableColumn fx:id="colDate" prefWidth="231.0" text="Date" />
-            <TableColumn fx:id="colCheckin" prefWidth="118.0" text="Checkin" />
-            <TableColumn fx:id="colCheckout" prefWidth="116.5" text="Checkout" />
-            <TableColumn fx:id="colOvertime" prefWidth="137.5" text="Overtime" />
+            <TableColumn fx:id="colDate" prefWidth="153.0" text="Date" />
+            <TableColumn fx:id="colCheckin" minWidth="0.0" prefWidth="160.0" text="Checkin" />
+            <TableColumn fx:id="colCheckout" prefWidth="153.0" text="Checkout" />
+            <TableColumn fx:id="colOvertime" minWidth="0.0" prefWidth="163.0" text="Overtime" />
          </columns>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </TableView>
    </children>
 </AnchorPane>
