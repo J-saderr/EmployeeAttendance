@@ -16,7 +16,7 @@
 
 .table-view {
     -fx-font-family: "Montserrat";
-    -fx-min-width: 600px; /* Minimum width */
+    /*-fx-min-width: 600px; !* Minimum width *!*/
     -fx-pref-width: 670px;
 }
 
@@ -24,8 +24,8 @@
     -fx-pref-width: 85px;
 }
 
-.table-view .table-row {
-    -fx-pref-height: 30px;
+.table-view .table-row-cell {
+    -fx-pref-height: 25px;
 }
 
 .table-view .table-column#colStatus {
@@ -40,6 +40,11 @@
     -fx-font-family: "Montserrat SemiBold";
     -fx-background-color: #799cf0;
     -fx-pref-height: 30px;
+}
+
+.table-row-cell .table-cell {
+    -fx-alignment: center; /* Đảm bảo văn bản được căn giữa theo chiều ngang */
+    -fx-alignment: center; /* Căn giữa theo chiều dọc */
 }
 
 /*Table header color*/

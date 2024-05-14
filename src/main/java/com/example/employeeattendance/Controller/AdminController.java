@@ -149,13 +149,6 @@ public class AdminController extends MainController implements Initializable {
                     );
 
                     pieChart.setData(pieChartData);
-
-                    /*PIE CHART COLOR*/
-                    pieChartData.get(0).getNode().setStyle("-fx-pie-color: #AFD198;"); // in time
-                    pieChartData.get(1).getNode().setStyle("-fx-pie-color: #8B322C;"); // late
-                    pieChartData.get(2).getNode().setStyle("-fx-pie-color: #F3CA52;"); // absent
-                    pieChartData.get(3).getNode().setStyle("-fx-pie-color: #D1BB9E;"); // overtime
-
                     pieChart.setVisible(true);
                 }
 
@@ -196,11 +189,6 @@ public class AdminController extends MainController implements Initializable {
 
                     pieChart.setData(pieChartData);
 
-                    /*PIE CHART COLOR*/
-                    pieChartData.get(0).getNode().setStyle("-fx-pie-color: #AFD198;"); // in time
-                    pieChartData.get(1).getNode().setStyle("-fx-pie-color: #8B322C;"); // late
-                    pieChartData.get(2).getNode().setStyle("-fx-pie-color: #F3CA52;"); // absent
-                    pieChartData.get(3).getNode().setStyle("-fx-pie-color: #D1BB9E;"); // overtime
                 }
 
                 resultSet.close();

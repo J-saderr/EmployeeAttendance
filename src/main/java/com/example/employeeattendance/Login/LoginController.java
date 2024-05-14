@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -84,6 +85,12 @@ public class LoginController implements Initializable {
                     Stage stage = new Stage();
                     Scene scene = new Scene(root);
 
+                    Image icon = new Image("building.png");
+                    stage.getIcons().add(icon);
+                    stage.setTitle("BChecking");
+                    stage.setResizable(false);
+
+
                     stage.setScene(scene);
                     stage.show();
 
@@ -101,6 +108,11 @@ public class LoginController implements Initializable {
                         Parent root = FXMLLoader.load(getClass().getResource("/com/example/employeeattendance/LoginAdmin/admin.fxml"));
                         Stage stage = new Stage();
                         Scene scene = new Scene(root);
+
+                        Image icon = new Image("building.png");
+                        stage.getIcons().add(icon);
+                        stage.setTitle("BChecking");
+                        stage.setResizable(false);
 
                         stage.setScene(scene);
                         stage.show();
