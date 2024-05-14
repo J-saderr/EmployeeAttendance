@@ -5,19 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="login_form" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #FFFEFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.Login.LoginController">
+<AnchorPane fx:id="login_form" minHeight="400.0" minWidth="450.0" prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #FFFEFA;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.employeeattendance.Login.LoginController">
    <children>
-      <Label layoutX="118.0" layoutY="110.0" text="Welcome to BChecking!" textFill="#799cf0">
+      <ImageView fitHeight="441.0" fitWidth="450.0" layoutX="216.0" layoutY="130.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Asset%209.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="262.0" fitWidth="340.0" layoutX="-116.0" layoutY="255.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Asset%204.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="101.0" layoutX="29.0" layoutY="317.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Asset%206.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="118.0" layoutY="109.0" text="Welcome to BChecking!" textFill="#799cf0">
          <font>
             <Font name="Montserrat SemiBold" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="174.0" layoutY="66.0" text="Log In" textFill="#132fba">
+      <Label layoutX="166.0" layoutY="58.0" text="Log In" textFill="#132fba">
          <font>
-            <Font name="Montserrat Black" size="30.0" />
+            <Font name="Montserrat Black" size="35.0" />
          </font>
       </Label>
       <TextField fx:id="login_userid" layoutX="99.0" layoutY="185.0" prefHeight="29.0" prefWidth="252.0" promptText="Username">
@@ -44,5 +61,20 @@
             <Font name="Montserrat Semi Bold" size="16.0" />
          </font>
       </Button>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-75.0" layoutY="-49.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Asset%202.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="232.0" fitWidth="195.0" layoutX="403.0" layoutY="53.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Asset%205.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="91.0" layoutX="-18.0" layoutY="58.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/Asset%207.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

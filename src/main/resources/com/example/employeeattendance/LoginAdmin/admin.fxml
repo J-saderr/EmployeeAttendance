@@ -40,7 +40,7 @@
                   </Label>
                   <ImageView fitHeight="69.0" fitWidth="63.0" layoutX="7.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@building.png" />
+                        <Image url="@../icon/building.png" />
                      </image>
                   </ImageView>
                   <Line endX="37.33335876464844" endY="3.814697265625E-6" layoutX="178.0" layoutY="42.0" startX="-100.0" stroke="#799cf0" strokeWidth="2.0" />
@@ -53,8 +53,8 @@
             <Font name="Montserrat Semi Bold" size="23.0" />
          </font></Label>
       <PieChart fx:id="pieChart" layoutX="416.0" layoutY="45.0" prefHeight="390.0" prefWidth="505.0" />
-      <ComboBox fx:id="ButtonMonth" layoutX="278.0" layoutY="80.0" prefHeight="39.0" prefWidth="160.0" promptText="Month" stylesheets="@admincss.css" />
-      <TableView fx:id="tbData" layoutX="279.0" layoutY="435.0" prefHeight="245.0" prefWidth="632.0">
+      <ComboBox fx:id="ButtonMonth" layoutX="278.0" layoutY="80.0" onAction="#onSelected" prefHeight="39.0" prefWidth="160.0" promptText="Month" stylesheets="@admincss.css" />
+      <TableView fx:id="tbData" layoutX="278.0" layoutY="445.0" prefHeight="245.0" prefWidth="659.0">
         <columns>
           <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="colInTime" prefWidth="75.0" text="In-time" />

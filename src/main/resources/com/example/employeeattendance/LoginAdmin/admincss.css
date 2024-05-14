@@ -16,12 +16,25 @@
 
 .table-view {
     -fx-font-family: "Montserrat";
-    -fx-pref-width: 630px; /*7 column*/
+    -fx-min-width: 600px; /* Minimum width */
+    -fx-pref-width: 670px;
 }
 
 .table-view .table-column {
-    -fx-pref-width: 90px;
+    -fx-pref-width: 85px;
 }
+
+.table-view .table-row {
+    -fx-pref-height: 30px;
+}
+
+.table-view .table-column#colStatus {
+    -fx-pref-width: 160px;
+}
+
+/*.table-view .table-column#colOvertime {*/
+/*    -fx-pref-width: 80px;*/
+/*}*/
 /*Table header color*/
 .table-view .column-header {
     -fx-font-family: "Montserrat SemiBold";
@@ -50,11 +63,18 @@
     -fx-background-radius: 15px 15px 15px 15px;
 
 }
+
+#ButtonMonth:hover {
+    -fx-background-color: #fff6d2;
+    -fx-text-fill: #132fba;
+    -fx-font-weight: 200px;
+    /*-fx-opacity: 0.7;*/
+}
+
 #ButtonMonth .cell{
     -fx-text-fill: #132fba;
     -fx-font-size: 17px;
     -fx-font-family: "Montserrat Medium";
-
 }
 
 #HomeButton {
@@ -73,6 +93,7 @@
 
 /*PIE CHART COLOR*/
 
+/*LOOP1*/
 /* absent */
 .default-color0.chart-pie {
     -fx-pie-color: #F3CA52;
@@ -90,5 +111,27 @@
 
 /* abs appr */
 .default-color3.chart-pie {
+    -fx-pie-color: #D1BB9E;
+}
+
+
+/*LOOP 2*/
+/* absent */
+.default-color4.chart-pie {
+    -fx-pie-color: #F3CA52;
+}
+
+/* late */
+.default-color5.chart-pie {
+    -fx-pie-color: #8B322C;
+}
+
+/* in time */
+.default-color6.chart-pie {
+    -fx-pie-color: #AFD198;
+}
+
+/* abs appr */
+.default-color7.chart-pie {
     -fx-pie-color: #D1BB9E;
 }

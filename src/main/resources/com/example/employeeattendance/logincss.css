@@ -1,0 +1,11 @@
+#ButtonLogin {
+    -fx-background-color: #799CF0;
+}
+
+#login_form {
+    -fx-background-color: #fff6d2;
+}
+
+#ButtonLogin:hover {
+    -fx-background-color: #e1e1e1;
+}
