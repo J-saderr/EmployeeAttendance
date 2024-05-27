@@ -72,7 +72,7 @@
 #ButtonMonth:hover {
     -fx-background-color: #fff6d2;
     -fx-text-fill: #132fba;
-    -fx-font-weight: 200px;
+    -fx-font-weight: 200;
     /*-fx-opacity: 0.7;*/
 }
 

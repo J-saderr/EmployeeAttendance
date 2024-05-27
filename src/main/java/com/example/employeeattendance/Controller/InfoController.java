@@ -67,7 +67,7 @@ public class InfoController extends MainController implements Initializable {
         UserInfo info1 = null;
         try {
 
-            String sql = "SELECT * FROM information WHERE id = " + getData.userid;
+            String sql = "SELECT * FROM information WHERE Employee_ID = " + getData.userid;
           
             Connection connection = connectDb();
 
@@ -76,7 +76,7 @@ public class InfoController extends MainController implements Initializable {
 
             if (resultSet.next()) {
                 info1 = new UserInfo(
-                        resultSet.getInt("ID"),
+                        resultSet.getInt("Employee_ID"),
                         resultSet.getString("Name"),
                         resultSet.getString("Position"),
                         resultSet.getString("Department"),
@@ -112,7 +112,7 @@ public class InfoController extends MainController implements Initializable {
     }
 
     private void saveBio(String bio) {
-        String updateSql = "UPDATE information SET Bio = ? WHERE id = " + getData.userid;
+        String updateSql = "UPDATE information SET Bio = ? WHERE Employee_ID = " + getData.userid;
         Connection connect = connectDb();
         PreparedStatement updatePrepare = null;
         try {
@@ -139,7 +139,7 @@ public class InfoController extends MainController implements Initializable {
     }
 
     private void refreshBio() {
-        String selectSql = "SELECT Bio FROM information WHERE id = " + getData.userid;
+        String selectSql = "SELECT Bio FROM information WHERE Employee_ID = " + getData.userid;
         Connection connect = connectDb();
         PreparedStatement selectPrepare = null;
         ResultSet resultSet = null;

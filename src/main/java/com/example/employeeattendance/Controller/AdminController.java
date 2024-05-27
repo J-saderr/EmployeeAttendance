@@ -72,24 +72,47 @@ public class AdminController extends MainController implements Initializable {
 
     private ObservableList<AttendRecord> getDataByMonth(String month) throws SQLException {
         ObservableList<AttendRecord> result = FXCollections.observableArrayList();
-
-        String sql = String.format("select * from attend_record_%s", month);
-
-        Connection connection = connectDb();
-
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        ResultSet resultSet = preparedStatement.executeQuery();
-
-        while(resultSet.next()){
-            result.add(new AttendRecord(
-                    resultSet.getInt("ID"),
-                    resultSet.getInt("in_time"),
-                    resultSet.getInt("late"),
-                    resultSet.getInt("total_absent"),
-                    resultSet.getInt("approval"),
-                    resultSet.getString("status"),
-                    resultSet.getInt("overtime"))
+        if(month.equals("jan")){
+            String sql = String.format(
+                    "SELECT attend_record_jan.*, jan_compliance.Jan_Status FROM employee.attend_record_jan\n" +
+                            "JOIN jan_compliance ON attend_record_jan.JanPerform_ID = jan_compliance.JanPerform_ID;"
             );
+            Connection connection = connectDb();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                result.add(new AttendRecord(
+                        resultSet.getInt("JanPerform_ID"),
+                        resultSet.getInt("Jan_TotalIntime"),
+                        resultSet.getInt("Jan_TotalLate"),
+                        resultSet.getInt("Jan_TotalAbsent"),
+                        resultSet.getInt("Jan_AbsentApproval"),
+                        resultSet.getString("Jan_Status"),
+                        resultSet.getInt("Jan_TotalOvertime"))
+                );
+            }
+        }
+        if(month.equals("feb")){
+            String sql = String.format(
+                    "SELECT attend_record_feb.*, feb_compliance.Feb_Status FROM employee.attend_record_feb\n" +
+                            "JOIN feb_compliance ON attend_record_feb.FebPerform_ID = feb_compliance.FebPerform_ID;"
+            );
+            Connection connection = connectDb();
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while(resultSet.next()){
+                result.add(new AttendRecord(
+                        resultSet.getInt("FebPerform_ID"),
+                        resultSet.getInt("Feb_TotalIntime"),
+                        resultSet.getInt("Feb_TotalLate"),
+                        resultSet.getInt("Feb_TotalAbsent"),
+                        resultSet.getInt("Feb_AbsentApproval"),
+                        resultSet.getString("Feb_Status"),
+                        resultSet.getInt("Feb_TotalOvertime"))
+                );
+            }
         }
 
         return result;
@@ -138,7 +161,7 @@ public class AdminController extends MainController implements Initializable {
                 if (resultSet.next()) {
                     Double onTime = resultSet.getDouble("in_time");
                     Double lateCount = resultSet.getDouble("late");
-                    Double absentCount = resultSet.getDouble("total_ab");
+                    Double absentCount = resultSet.getDouble("total_absent");
                     Double ovtCount = resultSet.getDouble("overtime");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
@@ -176,7 +199,7 @@ public class AdminController extends MainController implements Initializable {
 
                     Double onTimeCount = resultSet.getDouble("in_time");
                     Double lateCount = resultSet.getDouble("late");
-                    Double absentCount = resultSet.getDouble("total_ab");
+                    Double absentCount = resultSet.getDouble("total_absent");
                     Double ovtCount = resultSet.getDouble("overtime");
 
 

@@ -1,4 +1,4 @@
-package com.example.employeeattendance;
+package com.example.employeeattendance.models;
 
 import java.sql.Date;
 import java.sql.Time;

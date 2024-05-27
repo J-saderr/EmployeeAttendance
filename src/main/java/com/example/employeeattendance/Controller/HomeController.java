@@ -100,7 +100,7 @@ public class HomeController extends MainController implements Initializable{
     public UserInfo showInfo1(){
         UserInfo info1 = null;
         try {
-            String sql = "SELECT * FROM information WHERE id = " + getData.userid;
+            String sql = "SELECT * FROM information WHERE Employee_ID = " + getData.userid;
             Connection connection = connectDb();
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -108,7 +108,7 @@ public class HomeController extends MainController implements Initializable{
 
             if (resultSet.next()) {
                 info1 = new UserInfo(
-                        resultSet.getInt("ID"),
+                        resultSet.getInt("Employee_ID"),
                         resultSet.getString("Name"),
                         resultSet.getString("Position"),
                         resultSet.getString("Department"),
@@ -131,7 +131,10 @@ public class HomeController extends MainController implements Initializable{
 
         if ("January".equals(selectedValue)) {
             try {
-                String sql = "SELECT * FROM sal_perform_jan WHERE id = " + getData.userid;
+                String sql = "SELECT j.*, s.Jan_MonthlyIncome\n" +
+                        "FROM employee.sal_perform_jan j\n" +
+                        "INNER JOIN employee.jan_totalsalary s ON j.JanSal_ID = s.JanSal_ID\n" +
+                        "WHERE s.Employee_ID = " + getData.userid;
                 Connection connection = connectDb();
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -139,11 +142,11 @@ public class HomeController extends MainController implements Initializable{
 
                 if (resultSet.next()) {
                     info2 = new UserInfo(
-                            resultSet.getInt("ID"),
-                            resultSet.getInt("Absent"),
-                            resultSet.getInt("Bonus"),
-                            resultSet.getInt("Income"),
-                            resultSet.getInt("Penalty")
+                            resultSet.getInt("JanSal_ID"),
+                            resultSet.getInt("Jan_Absent"),
+                            resultSet.getInt("Jan_Bonus"),
+                            resultSet.getInt("Jan_MonthlyIncome"),
+                            resultSet.getInt("Jan_Penalty")
                     );
                 }
 
@@ -156,7 +159,10 @@ public class HomeController extends MainController implements Initializable{
         }
         else if ("February".equals(selectedValue)) {
             try {
-                String sql = "SELECT * FROM sal_perform_feb WHERE id = " + getData.userid;
+                String sql = "SELECT f.*, s.Feb_MonthlyIncome\n" +
+                        "FROM employee.sal_perform_feb f\n" +
+                        "INNER JOIN employee.feb_totalsalary s ON f.FebSal_ID = s.FebSal_ID\n" +
+                        "WHERE s.Employee_ID = " + getData.userid;
                 Connection connection = connectDb();
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -164,11 +170,11 @@ public class HomeController extends MainController implements Initializable{
 
                 if (resultSet.next()) {
                     info2 = new UserInfo(
-                            resultSet.getInt("ID"),
-                            resultSet.getInt("Absent"),
-                            resultSet.getInt("Bonus"),
-                            resultSet.getInt("Income"),
-                            resultSet.getInt("Penalty")
+                            resultSet.getInt("FebSal_ID"),
+                            resultSet.getInt("Feb_Absent"),
+                            resultSet.getInt("Feb_Bonus"),
+                            resultSet.getInt("Feb_MonthlyIncome"),
+                            resultSet.getInt("Feb_Penalty")
 
                     );
                 }
@@ -204,16 +210,16 @@ public class HomeController extends MainController implements Initializable{
         String selectedValue = comboBox.getValue();
 
         if ("January".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_jan WHERE id =" + getData.userid;
+            String sql = "SELECT * FROM attend_record_jan WHERE JanPerform_ID =" + getData.userid;
             try {
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
                 if (resultSet.next()) {
-                    int onTimeCount = resultSet.getInt("in_time");
-                    int lateCount = resultSet.getInt("late");
-                    int absentCount = resultSet.getInt("total_absent");
+                    int onTimeCount = resultSet.getInt("Jan_TotalIntime");
+                    int lateCount = resultSet.getInt("Jan_TotalLate");
+                    int absentCount = resultSet.getInt("Jan_TotalAbsent");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                             new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),
@@ -240,15 +246,15 @@ public class HomeController extends MainController implements Initializable{
             }
         }
         else if ("February".equals(selectedValue)) {
-            String sql = "SELECT * FROM attend_record_feb WHERE id = " + getData.userid;
+            String sql = "SELECT * FROM attend_record_feb WHERE FebPerform_ID = " + getData.userid;
             try {
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 ResultSet resultSet = preparedStatement.executeQuery();
 
                 if (resultSet.next()) {
-                    int onTimeCount = resultSet.getInt("in_time");
-                    int lateCount = resultSet.getInt("late");
-                    int absentCount = resultSet.getInt("total_absent");
+                    int onTimeCount = resultSet.getInt("Feb_TotalIntime");
+                    int lateCount = resultSet.getInt("Feb_TotalLate");
+                    int absentCount = resultSet.getInt("Feb_Totalabsent");
 
                     ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
                             new PieChart.Data("On time (" + onTimeCount + ")", onTimeCount),

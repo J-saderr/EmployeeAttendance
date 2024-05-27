@@ -57,9 +57,9 @@ public class LoginController implements Initializable {
         } else {
             String selectData1 = "SELECT * FROM logininfo WHERE "
 
-                    + "User_id = ? and Password = ? and Position = 'User'"; //Account user
+                    + "User_id = ? and Password = ? and Account_Type = 'User'"; //Account user
             String selectData2 = "SELECT * FROM logininfo WHERE "
-                    + "User_id = ? and Password = ? and Position = 'Admin'"; //Account admin
+                    + "User_id = ? and Password = ? and Account_Type = 'Admin'"; //Account admin
 
             connect = connectDb();
 

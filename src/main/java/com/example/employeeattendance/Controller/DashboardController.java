@@ -54,7 +54,7 @@ public class DashboardController extends MainController implements Initializable
     public ObservableList<Attendance> getAttendanceByMonth(String month) throws SQLException {
         ObservableList<Attendance> result = FXCollections.observableArrayList();
         Connection connection = connectDb();
-        String sql = String.format("SELECT DISTINCT * FROM attendance%s WHERE id = ?", month);
+        String sql = String.format("SELECT * FROM attendance%s WHERE Employee_ID = ?", month);
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         int userId = Integer.parseInt(getData.userid);
@@ -64,26 +64,22 @@ public class DashboardController extends MainController implements Initializable
 
         while (resultSet.next()) {
             Attendance attendance = new Attendance();
-            attendance.setId(resultSet.getInt(1));
+            attendance.setId(resultSet.getInt(2));
 
-            Date date = resultSet.getDate(2);
+            Date date = resultSet.getDate(3);
             attendance.setDate(date);
 
-            Time checkinTimestamp = resultSet.getTime(3);
+            Time checkinTimestamp = resultSet.getTime(4);
             attendance.setCheckin(checkinTimestamp != null ? sdf.format(checkinTimestamp) : null);
 
-            Time checkoutTimestamp = resultSet.getTime(4);
+            Time checkoutTimestamp = resultSet.getTime(5);
             attendance.setCheckout(checkoutTimestamp != null ? sdf.format(checkoutTimestamp) : null);
 
-            Time overtime = resultSet.getTime(5);
+            Time overtime = resultSet.getTime(6);
             attendance.setOvertime(overtime != null ? sdf.format(overtime) : null);
 
             result.add(attendance);
         }
-
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
 
         return result;
     }
@@ -124,7 +120,7 @@ public class DashboardController extends MainController implements Initializable
 
         if ("January".equals(selectedValue)) {
             lineChart.getData().clear();
-            String sql = "SELECT DATE_FORMAT(Checkin_DateTime, '%m-%d') as date, HOUR(TIME(Checkin_DateTime)) + MINUTE(TIME(Checkin_DateTime)) / 60.0 as hours FROM attendancetracking_jan WHERE ID = " + getData.userid;
+            String sql = "SELECT DATE_FORMAT(Jan_Date, '%m-%d') as date, HOUR(Jan_Checkin) + MINUTE(Jan_Checkin) / 60.0 as hours FROM attendancejan WHERE Employee_ID =" + getData.userid;
             try {
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -166,7 +162,7 @@ public class DashboardController extends MainController implements Initializable
             }
         } else if ("February".equals(selectedValue)) {
             lineChart.getData().clear();
-            String sql = "SELECT DATE_FORMAT(Checkin_DateTime, '%m-%d') as date, HOUR(TIME(Checkin_DateTime)) + MINUTE(TIME(Checkin_DateTime)) / 60.0 as hours FROM attendancetracking_feb WHERE ID = " + getData.userid;
+            String sql = "SELECT DATE_FORMAT(Feb_Date, '%m-%d') as date, HOUR(Feb_Checkin) + MINUTE(Feb_Checkin) / 60.0 as hours FROM attendancefeb WHERE Employee_ID =" + getData.userid;
             try {
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
