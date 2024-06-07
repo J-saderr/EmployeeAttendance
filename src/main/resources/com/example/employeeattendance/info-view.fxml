@@ -90,6 +90,17 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
+                  <Button fx:id="dashboard111" alignment="BOTTOM_LEFT" graphicTextGap="12.0" layoutX="14.0" layoutY="633.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="33.0" prefWidth="130.0" styleClass="trans" stylesheets="@style.css" text="Logout" textFill="#fff6d2">
+                     <font>
+                        <Font name="Montserrat ExtraBold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
                </children>
             </AnchorPane>
          </children>
